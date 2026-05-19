@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DragonChilli - Oriental Kitchen</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',Arial,sans-serif;
+background-color:#1a0a00;
+color:#f0e6d3;
+}
+
+/* NAVBAR */
+.navbar{
+background-color:#1a0a00;
+padding:18px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #3d1a00;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.navbar .logo{
+font-family:'Cinzel',serif;
+font-size:22px;
+font-weight:700;
+color:#d4a017;
+text-decoration:none;
+letter-spacing:2px;
+}
+
+.nav-links{list-style:none;display:flex;gap:30px;}
+
+.nav-links li a{
+color:#f0e6d3;
+text-decoration:none;
+font-size:14px;
+font-weight:300;
+letter-spacing:1px;
+transition:0.3s;
+}
+
+.nav-links li a:hover{color:#d4a017;}
+
+.nav-buttons{display:flex;gap:12px;}
+
+.btn-signin{
+background:none;
+border:1px solid #d4a017;
+color:#d4a017;
+padding:8px 18px;
+border-radius:20px;
+cursor:pointer;
+font-size:13px;
+}
+
+.btn-signin:hover{
+background:#d4a017;
+color:#1a0a00;
+}
+
+.btn-order{
+background:#8b1a00;
+border:1px solid #8b1a00;
+color:white;
+padding:8px 18px;
+border-radius:20px;
+cursor:pointer;
+font-size:13px;
+}
+
+.btn-order:hover{background:#a82000;}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:100px 30px 80px;
+background:linear-gradient(rgba(26,10,0,0.7),rgba(26,10,0,0.9)),
+url('https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1200') center/cover no-repeat;
+}
+
+.hero .label-kecil{
+font-size:12px;
+letter-spacing:4px;
+color:#d4a017;
+text-transform:uppercase;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-family:'Cinzel',serif;
+font-size:64px;
+font-weight:700;
+margin-bottom:15px;
+letter-spacing:4px;
+}
+
+.hero h1 span{color:#d4a017;}
+
+.hero .tagline{
+font-size:13px;
+letter-spacing:6px;
+color:#c0a080;
+text-transform:uppercase;
+margin-bottom:25px;
+}
+
+.divider{
+width:60px;height:2px;background:#d4a017;
+margin:0 auto 25px;
+}
+
+.hero .deskripsi{
+font-size:15px;
+color:#c0a080;
+max-width:500px;
+margin:0 auto 35px;
+line-height:1.8;
+}
+
+.hero .btn-menu{
+background:#8b1a00;
+color:white;
+padding:14px 35px;
+border:none;
+border-radius:30px;
+font-size:14px;
+cursor:pointer;
+text-decoration:none;
+letter-spacing:1px;
+}
+
+.hero .btn-menu:hover{background:#a82000;}
+
+/* MENU */
+.menu{padding:80px 50px;background:#1a0a00;}
+
+.section-title{text-align:center;margin-bottom:50px;}
+
+.section-title .label-kecil{
+font-size:11px;letter-spacing:4px;color:#d4a017;
+text-transform:uppercase;margin-bottom:10px;
+}
+
+.section-title h2{
+font-family:'Cinzel',serif;
+font-size:32px;margin-bottom:12px;
+}
+
+.section-title p{color:#9a7a5a;font-size:14px;}
+
+.kartu-list{
+display:flex;justify-content:center;gap:25px;flex-wrap:wrap;
+}
+
+.kartu{
+background:#2a1000;border-radius:16px;width:230px;
+overflow:hidden;border:1px solid #3d1a00;
+transition:0.3s;
+}
+
+.kartu:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,0.4);
+}
+
+.kartu img{
+width:100%;height:165px;object-fit:cover;
+}
+
+.badge-wrapper{position:relative;}
+
+.badge{
+position:absolute;top:12px;left:12px;
+background:#8b1a00;color:white;
+font-size:11px;padding:3px 10px;border-radius:10px;
+}
+
+.kartu-info{padding:16px;}
+
+.kartu-info h3{font-size:16px;margin-bottom:5px;}
+
+.kartu-info .sub{font-size:12px;color:#9a7a5a;margin-bottom:10px;}
+
+.rating{color:#d4a017;font-size:13px;margin-bottom:12px;}
+
+.rating span{color:#9a7a5a;font-size:12px;margin-left:5px;}
+
+.kartu-bawah{
+display:flex;justify-content:space-between;align-items:center;
+}
+
+.harga{color:#d4a017;font-weight:600;font-size:17px;}
+
+.btn-beli{
+background:#8b1a00;color:white;border:none;
+padding:7px 16px;border-radius:20px;cursor:pointer;font-size:12px;
+}
+
+.btn-beli:hover{background:#a82000;}
+
+/* FOOTER */
+.footer{
+background:#0d0500;border-top:1px solid #3d1a00;
+padding:60px 50px 30px;
+}
+
+.footer-isi{
+display:flex;justify-content:space-between;gap:40px;
+flex-wrap:wrap;margin-bottom:40px;
+}
+
+.footer-tentang{max-width:260px;}
+
+.logo-footer{
+font-family:'Cinzel',serif;font-size:20px;
+color:#d4a017;letter-spacing:2px;margin-bottom:15px;display:block;
+}
+
+.footer-tentang p{
+font-size:13px;color:#9a7a5a;line-height:1.8;margin-bottom:20px;
+}
+
+.footer-links h4,
+.footer-kontak h4{
+font-size:14px;margin-bottom:18px;
+}
+
+.footer-links ul{list-style:none;}
+
+.footer-links ul li{margin-bottom:10px;}
+
+.footer-links ul li a{
+color:#9a7a5a;text-decoration:none;font-size:13px;
+}
+
+.footer-links ul li a:hover{color:#d4a017;}
+
+.footer-kontak .item-kontak{
+display:flex;gap:10px;margin-bottom:14px;
+}
+
+.footer-kontak .teks{
+font-size:13px;color:#9a7a5a;
+}
+
+.footer-bawah{
+border-top:1px solid #2a1000;
+padding-top:20px;text-align:center;
+font-size:12px;color:#5a3a1a;
+}
+
+/* CART */
+.cart{
+position:fixed;bottom:20px;right:20px;
+width:300px;background:#2a1000;
+border:1px solid #3d1a00;
+border-radius:15px;padding:20px;
+z-index:999;
+}
+
+.cart h3{color:#d4a017;margin-bottom:10px;}
+
+.cart ul{
+list-style:none;max-height:150px;
+overflow-y:auto;margin-bottom:10px;
+}
+
+.cart ul li{
+display:flex;justify-content:space-between;
+font-size:13px;margin-bottom:6px;
+}
+
+.cart-total{font-weight:bold;margin-bottom:10px;}
+
+.btn-checkout{
+width:100%;padding:8px;border:none;
+border-radius:20px;background:#8b1a00;
+color:white;cursor:pointer;
+}
+
+.btn-checkout:hover{background:#a82000;}
+
+/* SIGNIN MODAL */
+.modal{
+display:none;position:fixed;inset:0;
+background:rgba(0,0,0,0.6);
+justify-content:center;align-items:center;
+z-index:2000;
+}
+
+.modal-content{
+background:#2a1000;padding:30px;
+border-radius:15px;width:300px;
+}
+
+.modal-content h3{
+margin-bottom:15px;color:#d4a017;
+}
+
+.modal-content input{
+width:100%;padding:8px;
+margin-bottom:10px;border-radius:10px;border:none;
+}
+
+.modal-content button{
+width:100%;padding:8px;border:none;
+border-radius:20px;background:#8b1a00;
+color:white;cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="#" class="logo">DragonChilli</a>
+
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#tentang">About</a></li>
+<li><a href="#footer">Contact</a></li>
+</ul>
+
+<div class="nav-buttons">
+<button class="btn-signin">Sign In</button>
+<button class="btn-order">Order Now</button>
+</div>
+</nav>
+
+<section class="hero">
+<p class="label-kecil">Selamat Datang di DragonChilli</p>
+<h1>Oriental <span>Kitchen</span></h1>
+<p class="tagline">Authentic Kitchen | Crafted With Tradition</p>
+<div class="divider"></div>
+<p class="deskripsi">
+Nikmati hidangan Chinese berkualitas dengan cita rasa autentik,
+bahan pilihan segar, dan resep tradisional turun-temurun.
+</p>
+<a href="#menu" class="btn-menu">Lihat Menu Kami</a>
+</section>
+
+<section class="menu" id="menu">
+<div class="section-title">
+<p class="label-kecil">Pilihan Terbaik</p>
+<h2>Menu Andalan</h2>
+<p>Hidangan khas China yang dimasak dengan penuh cinta</p>
+</div>
+
+<div class="kartu-list">
+
+<div class="kartu">
+<div class="badge-wrapper">
+<img src="https://kabarbaik.co/wp-content/uploads/2024/08/wontan.jpeg">
+<span class="badge">Terlaris</span>
+</div>
+<div class="kartu-info">
+<h3>Wonton</h3>
+<p class="sub">Sup wonton kuah gurih</p>
+<div class="rating">★★★★★ <span>4.8 (120)</span></div>
+<div class="kartu-bawah">
+<span class="harga">Rp 25.000</span>
+<button class="btn-beli" onclick="addToCart('Wonton',25000)">+ Pesan</button>
+</div>
+</div>
+</div>
+
+<div class="kartu">
+<div class="badge-wrapper">
+<img src="https://www.unileverfoodsolutions.co.id/dam/ufs-id/recipes/Peking%20Duck.jpg">
+<span class="badge">Spesial</span>
+</div>
+<div class="kartu-info">
+<h3>Bebek Peking</h3>
+<p class="sub">Bebek panggang kulit renyah</p>
+<div class="rating">★★★★★ <span>4.9 (98)</span></div>
+<div class="kartu-bawah">
+<span class="harga">Rp 60.000</span>
+<button class="btn-beli" onclick="addToCart('Bebek Peking',60000)">+ Pesan</button>
+</div>
+</div>
+</div>
+
+<div class="kartu">
+<div class="badge-wrapper">
+<img src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/8ae3f33e-df16-40c5-8066-d90f27e4b2b7_Go-Biz_20240918_090055.jpeg">
+<span class="badge">Favorit</span>
+</div>
+<div class="kartu-info">
+<h3>Dimsum</h3>
+<p class="sub">Dimsum kukus isi udang</p>
+<div class="rating">★★★★☆ <span>4.6 (210)</span></div>
+<div class="kartu-bawah">
+<span class="harga">Rp 15.000</span>
+<button class="btn-beli" onclick="addToCart('Dimsum',15000)">+ Pesan</button>
+</div>
+</div>
+</div>
+
+<div class="kartu">
+<div class="badge-wrapper">
+<img src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/08/07032610/Praktis-dan-Enak-Ini-Resep-Kwetiau-Goreng-Telur-yang-Lezat-.jpg.webp">
+<span class="badge">Baru</span>
+</div>
+<div class="kartu-info">
+<h3>Kwetiaw</h3>
+<p class="sub">Kwetiaw goreng seafood</p>
+<div class="rating">★★★★★ <span>4.7 (150)</span></div>
+<div class="kartu-bawah">
+<span class="harga">Rp 30.000</span>
+<button class="btn-beli" onclick="addToCart('Kwetiaw',30000)">+ Pesan</button>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer class="footer" id="footer">
+<!-- FOOTER TETAP SAMA PERSIS -->
+<div class="footer-isi">
+<div class="footer-tentang" id="tentang">
+<span class="logo-footer">DragonChilli</span>
+<p>Restoran Chinese food dengan cita rasa autentik...</p>
+</div>
+<div class="footer-isi">
+
+<div class="footer-tentang" id="tentang">
+<span class="logo-footer">DragonChilli</span>
+<p>Restoran Chinese food dengan cita rasa autentik...</p>
+</div>
+
+<!-- TAMBAHKAN DI SINI -->
+<div class="footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#tentang">About</a></li>
+<li><a href="#footer">Contact</a></li>
+</ul>
+</div>
+
+<div class="footer-kontak">
+<h4>Contact</h4>
+<div class="item-kontak"><div class="teks">📍 Jl. Pecinan No.88, Cimahi</div></div>
+<div class="item-kontak"><div class="teks">📞 +62 852-1177-3177</div></div>
+<div class="item-kontak"><div class="teks">✉ dragonchilli@gmail.com</div></div>
+<div class="item-kontak"><div class="teks">🕒 10.00 - 23.00 WIB</div></div>
+</div>
+
+</div>
+</div>
+<div class="footer-bawah">
+<p>2025 DragonChilli. All Rights Reserved.</p>
+</div>
+</footer>
+
+<div class="cart">
+<h3>Keranjang</h3>
+<ul id="cart-items"></ul>
+<div class="cart-total">Total: <span id="total-price">Rp 0</span></div>
+<button class="btn-checkout" onclick="checkoutWA()">Checkout</button>
+</div>
+
+<div class="modal" id="signinModal">
+<div class="modal-content">
+<h3>Sign In</h3>
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<button onclick="closeModal()">Login</button>
+</div>
+</div>
+
+<script>
+let cart=[];
+let total=0;
+
+function addToCart(nama,harga){
+cart.push({nama,harga});
+total+=harga;
+updateCart();
+}
+
+function updateCart(){
+const list=document.getElementById("cart-items");
+const totalText=document.getElementById("total-price");
+list.innerHTML="";
+cart.forEach(item=>{
+let li=document.createElement("li");
+li.innerHTML=`<span>${item.nama}</span><span>Rp ${item.harga.toLocaleString('id-ID')}</span>`;
+list.appendChild(li);
+});
+totalText.innerText="Rp "+total.toLocaleString('id-ID');
+}
+
+function checkoutWA(){
+if(cart.length===0){alert("Keranjang kosong");return;}
+let pesan="Halo DragonChilli, saya ingin pesan:%0A";
+cart.forEach(item=>{
+pesan+=`- ${item.nama} (Rp ${item.harga.toLocaleString('id-ID')})%0A`;
+});
+pesan+=`%0ATotal: Rp ${total.toLocaleString('id-ID')}`;
+window.open(`https://wa.me/6285211773177?text=${pesan}`,"_blank");
+}
+
+document.querySelector(".btn-signin").onclick=function(){
+document.getElementById("signinModal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("signinModal").style.display="none";
+}
+
+document.querySelector(".btn-order").onclick=function(){
+document.getElementById("menu").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
